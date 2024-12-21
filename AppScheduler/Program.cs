@@ -13,12 +13,24 @@ builder.Services.AddDbContext<AppDBContext>(opt =>
 });
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AppScheduler", policy =>
+    {
+        policy.WithOrigins("http://localhost:4000")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("AppScheduler");
 
 app.MapControllers();
 
