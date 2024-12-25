@@ -23,6 +23,8 @@ namespace AppScheduler.Controllers
             {
                 u.UserId,
                 u.UserName,
+                u.UserFirstName,
+                u.UserLastName,
                 u.UserPassword,
                 u.UserEmail,
                 u.UserPhone,
@@ -50,6 +52,8 @@ namespace AppScheduler.Controllers
             {
                 u.UserId,
                 u.UserName,
+                u.UserFirstName,
+                u.UserLastName,
                 u.UserPassword,
                 u.UserEmail,
                 u.UserPhone,
