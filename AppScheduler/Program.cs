@@ -1,7 +1,6 @@
 using AppScheduler.Data;
 using AppScheduler.Services;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
