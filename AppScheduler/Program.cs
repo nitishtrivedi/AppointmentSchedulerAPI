@@ -1,12 +1,14 @@
 using AppScheduler.Data;
 using AppScheduler.Services;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+    
 builder.Services.AddDbContext<AppDBContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("AppSchedulerDB"));

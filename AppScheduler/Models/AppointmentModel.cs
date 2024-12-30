@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace AppScheduler.Models
@@ -12,15 +13,15 @@ namespace AppScheduler.Models
 
 
         public int UserId { get; set; }
-        [JsonIgnore]
+        [JsonProperty]
         public UserModel User { get; set; }
 
         public int ServiceId { get; set; }
-        [JsonIgnore]
+        [JsonProperty]
         public ServiceModel Service { get; set; }
 
         public int EmployeeId { get; set; }
-        [JsonIgnore]
+        [JsonProperty]
         public EmployeeModel Employee { get; set; }
     }
 }
