@@ -27,9 +27,10 @@ namespace AppScheduler.Controllers
                 u.EmployeeName,
                 u.EmployeeService,
                 u.isAvailable,
-                Appointment = u.Appointments.Select(a => new
+                Appointments = u.Appointments.Select(a => new
                 {
-                    a.AppointmentId
+                    a.AppointmentId,
+                    a.Date
                 }).ToList()
             }).ToListAsync();
             return Ok(employee);
@@ -44,9 +45,10 @@ namespace AppScheduler.Controllers
                 u.EmployeeName,
                 u.EmployeeService,
                 u.isAvailable,
-                Appointment = u.Appointments.Select(a => new
+                Appointments = u.Appointments.Select(a => new
                 {
-                    a.AppointmentId
+                    a.AppointmentId,
+                    a.Date
                 }).ToList()
             }).FirstOrDefaultAsync(e => e.EmployeeId == id);
             if (employee == null) return NotFound();
