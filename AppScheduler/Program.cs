@@ -13,6 +13,7 @@ builder.Services.AddDbContext<AppDBContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("AppSchedulerDB"));
 });
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+builder.Services.AddScoped<EmployeeAvailabilityService>();
 
 builder.Services.AddCors(options =>
 {

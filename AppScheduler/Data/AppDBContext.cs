@@ -13,5 +13,6 @@ namespace AppScheduler.Data
         public DbSet<AppointmentModel> Appointments { get; set; }
         public DbSet<ServiceModel> Services { get; set; }
         public DbSet<EmployeeModel> Employees { get; set; }
+        public DbSet<EmployeeAvailability> EmployeeAvailability { get; set; }
     }
 }
